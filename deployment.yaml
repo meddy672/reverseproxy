@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    role: reverseproxy
+  name: reverseproxy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      role: reverseproxy
+  template:
+    metadata:
+      labels:
+        role: reverseproxy
+    spec:
+      containers:
+        - image: meddy672/simple-reverse-proxy
+          name: reverseproxy
