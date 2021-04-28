@@ -15,8 +15,8 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t meddy672/simple-reverse-proxy:latest
+  - docker build -f Dockerfile -t meddy672/simple-reverse-proxy .
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push meddy672/simple-reverse-proxy
+  - docker push meddy672/simple-reverse-proxy:latest
