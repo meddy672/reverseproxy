@@ -2,18 +2,29 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    role: reverseproxy
-  name: reverseproxy
+    service: reverseproxy1
+  name: reverseproxy1
 spec:
   replicas: 1
   selector:
     matchLabels:
-      role: reverseproxy
+      service: reverseproxy1
   template:
     metadata:
       labels:
-        role: reverseproxy
+        service: reverseproxy1
     spec:
       containers:
-        - image: meddy672/simple-reverse-proxy
-          name: reverseproxy
+      - image: meddy672/simple-reverse-proxy
+        name: reverseproxy1
+        imagePullPolicy: Always          
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"       
+        ports:
+        - containerPort: 8080
+      restartPolicy: Always

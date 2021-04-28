@@ -1,0 +1,22 @@
+{
+  "name": "udagram-reverse-proxy",
+  "version": "1.0.0",
+  "description": "This repository contains files needed to setup a reverse proxy",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meddy672/reverseproxy.git"
+  },
+  "author": "Matthew Eddy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meddy672/reverseproxy/issues"
+  },
+  "homepage": "https://github.com/meddy672/reverseproxy#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
